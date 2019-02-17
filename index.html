@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(function () {
+            $('button').click(function () {
+                $('img').width($('#scale').val() * $('img').width());
+                $('img').height($('#scale').val() * $('img').height());
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+    <div style="display: flex;justify-content: space-around;">
+        <div>
+            <br>
+            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                <div class="form-group ">
+                    <input type="file" class="form-control" onchange="fileChange(event)">
+                </div>
+            </div>
+
+
+            <br>
+            <div style="border-style: solid;width: 550px;height: 427px;">
+                <div style="display: flex;justify-content: space-around">
+                    <div class="dragZone">
+                        <img src="" id="img" height="200" ondragstart="dragStart(event)" width="260">
+
+                    </div>
+                    <div class="dragZone">
+                        <img src="" id="img2" height="200" ondragstart="dragStart(event)" width="260">
+
+                    </div>
+                </div>
+
+                <div style="display: flex;justify-content: space-around">
+                    <div class="dragZone">
+                        <img src="" id="img3" height="200" ondragstart="dragStart(event)" width="260">
+
+                    </div>
+                    <div class="dragZone">
+                        <img src="" id="img4" height="200" ondragstart="dragStart(event)" width="260">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div>
+            <br>
+            <div style="border-style: solid;width: 666px;height: 507px;">
+                <div style="display: flex;justify-content: space-around;margin-top: 6px;">
+                    <div>
+                        <div class="dropZone" ondragover="allowDrop(event)" ondrop="drop(event)" style=" border: 10px solid black;">
+
+                        </div>
+                        <div style="display: flex;">
+                            <input type="number" id="scale" class="form-control">
+                            <button class="btn btn-primary btn-xs">Resize</button>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="dropZone" ondragover="allowDrop(event)" ondrop="drop(event)" style=" border: 10px solid black;">
+
+                        </div>
+                        <div style="display: flex;">
+                            <input type="number" id="scale" class="form-control">
+                            <button class="btn btn-primary btn-xs">Resize</button>
+                        </div>
+                    </div>
+
+                
+                </div>
+                <br>
+                <div style="display: flex;justify-content: space-around">
+                    <div>
+                        <div class="dropZone" ondragover="allowDrop(event)" ondrop="drop(event)" style=" border: 10px solid black;">
+
+                        </div>
+                        <div style="display: flex;">
+                            <input type="number" id="scale" class="form-control">
+                            <button class="btn btn-primary btn-xs">Resize</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="dropZone" ondragover="allowDrop(event)" ondrop="drop(event)" style=" border: 10px solid black;">
+
+                        </div>
+                        <div style="display: flex;">
+                            <input type="number" id="scale" class="form-control">
+                            <button class="btn btn-primary btn-xs">Resize</button>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <button class="btn btn-success btn-lg" style="float: right;margin-right: 20px;">Create Image</button>
+
+    <img id="img3" src="">
+    <img id="img2" src="">
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>
